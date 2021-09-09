@@ -1,0 +1,18 @@
+﻿@model CarlosRobertoHenriquezAquino.Models.ViewModel.ValidacionViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Mensaje", "Validacion", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Monto)
+    @Html.TextBoxFor(m => m.Monto)
+    <br />
+    @Html.ValidationMessageFor(m => m.Monto, null, new { @class = "red" })
+
+
+    <input type="submit" />
+}
